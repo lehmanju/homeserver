@@ -1,0 +1,19 @@
+[Container]
+Pod=paperless.pod
+ContainerName=pl_webserver
+AutoUpdate=registry
+Image=ghcr.io/paperless-ngx/paperless-ngx:latest
+Volume=pldata.volume:/usr/src/paperless/data
+Volume=/preciousvol/paperless/media:/usr/src/paperless/media
+Environment=PAPERLESS_REDIS=redis://localhost:6379
+Environment=PAPERLESS_DBHOST=localhost
+Environment=PAPERLESS_URL=https://paperless.devpi.de
+Environment=PAPERLESS_SECRET_KEY=%%PAPERLESS_SECRET_KEY%%
+Environment=PAPERLESS_OCR_LANGUAGE=deu
+Environment=PAPERLESS_TIME_ZONE=Europe/Berlin
+Environment=PAPERLESS_ADMIN_USER=admin
+Environment=PAPERLESS_ADMIN_PASSWORD=%%PAPERLESS_ADMIN_PASSWORD%%
+Environment=PAPERLESS_DBPASS=%%PAPERLESS_DBPASS%%
+Environment="PAPERLESS_EMAIL_TASK_CRON=*/2 * * * *"
+Environment=PAPERLESS_FILENAME_FORMAT={created_year}/{correspondent}/{title}
+Environment="PAPERLESS_OCR_USER_ARGS={\"invalidate_digital_signatures\": true}"

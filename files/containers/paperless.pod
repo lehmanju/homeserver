@@ -1,0 +1,3 @@
+[Pod]
+PodName=paperless
+Network=paperlessnet.network

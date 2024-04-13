@@ -1,0 +1,10 @@
+[Container]
+ContainerName=jellyfin
+AutoUpdate=registry
+Image=docker.io/jellyfin/jellyfin
+Volume=jellyfin-config.volume:/config
+Volume=jellyfin-cache.volume:/cache
+Volume=/preciousvol/television:/media
+Volume=/dev/dri/renderD128:/dev/dri/renderD128
+UserNS=keep-id
+Network=jellynet.network

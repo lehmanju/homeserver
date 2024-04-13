@@ -1,0 +1,12 @@
+[Container]
+ContainerName=vaultwarden
+AutoUpdate=registry
+Network=bitwardennet.network
+Volume=/var/srv/bitwarden/bw-data:/data
+Image=ghcr.io/dani-garcia/vaultwarden:latest
+Environment=ADMIN_TOKEN=%%VW_ADMIN_TOKEN%%
+Environment=WEBSOCKET_ENABLED=True
+Environment=SMTP_HOST=postfix
+Environment=SMTP_PORT=587
+Environment=SMTP_SECURITY=off
+Environment=SMTP_FROM=server@devpi.de

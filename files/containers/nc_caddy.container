@@ -1,0 +1,9 @@
+[Container]
+Pod=nextcloud.pod
+ContainerName=nc_caddy
+VolumesFrom=nc_app.container
+AutoUpdate=registry
+Volume=/var/srv/nextcloud/Caddyfile:/etc/caddy/Caddyfile
+Volume=nextcloud_caddy_data.volume:/data
+Volume=nextcloud_caddy_config.volume:/config
+Image=docker.io/caddy

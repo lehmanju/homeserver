@@ -1,0 +1,5 @@
+[Container]
+Pod=nextcloud.pod
+ContainerName=nc_redis
+AutoUpdate=registry
+Image=docker.io/redis:alpine

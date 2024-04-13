@@ -1,0 +1,17 @@
+[Container]
+ContainerName=proxy
+AutoUpdate=registry
+Network=bitwardennet.network
+Network=vpnnet.network
+Network=paperlessnet.network
+Network=nextcloudnet.network
+Network=jellynet.network
+Network=bitwardennet.network
+Network=calibrenet.network
+Volume=/var/srv/proxy/Caddyfile:/etc/caddy/Caddyfile
+Volume=caddy_data.volume:/data
+Volume=caddy_config.volume:/config
+Image=docker.io/caddy
+PublishPort=80:80
+PublishPort=443:443
+PublishPort=443:443/udp

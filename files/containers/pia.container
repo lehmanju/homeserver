@@ -1,0 +1,16 @@
+[Container]
+ContainerName=pia
+AutoUpdate=registry
+Image=docker.io/thrnz/docker-wireguard-pia:latest
+Pod=vpn
+AddCapability=NET_ADMIN
+Sysctl=net.ipv4.conf.all.src_valid_mark=1
+Sysctl=net.ipv6.conf.all.disable_ipv6=1
+HealthCmd="ping -c 1 www.google.com || exit 1"
+HealthInterval=30s
+HealthTimeout=10s
+HealthRetries=3
+Environment=LOC=denmark
+Environment=NFTABLES=1
+Environment=USER=%%PIA_USER%%
+Environment=PASS=%%PIA_PASS%%

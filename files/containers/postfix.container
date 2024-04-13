@@ -1,0 +1,10 @@
+[Container]
+ContainerName=postfix
+AutoUpdate=registry
+Network=bitwardennet.network
+Image=docker.io/boky/postfix:latest
+PublishPort=1587:587
+Environment=ALLOWED_SENDER_DOMAINS=devpi.de
+Environment=RELAYHOST=smtp.goneo.de:587
+Environment=RELAYHOST_USERNAME=server@devpi.de
+Environment=RELAYHOST_PASSWORD=%%SMTP_PASSWORD%%

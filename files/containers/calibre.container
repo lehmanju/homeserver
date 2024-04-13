@@ -1,0 +1,12 @@
+[Container]
+ContainerName=calibre
+Image=lscr.io/linuxserver/calibre-web:latest
+AutoUpdate=registry
+Environment=PUID=1000
+Environment=GUID=1000
+Environment=TZ=Europe/Berlin
+Environment=DOCKER_MODS=linuxserver/mods:universal-calibre
+Environment=OAUTHLIB_RELAX_TOKEN_SCOPE=1
+Volume=/var/srv/calibre/config:/config
+Volume=/var/srv/calibre/library:/books
+Network=calibrenet.network

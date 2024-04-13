@@ -1,0 +1,3 @@
+[Pod]
+PodName=vpn
+Network=vpnnet.network

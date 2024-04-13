@@ -1,0 +1,3 @@
+[Pod]
+PodName=nextcloud
+Network=nextcloudnet.network
