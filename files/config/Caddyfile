@@ -1,0 +1,44 @@
+paperless.devpi.de {
+  reverse_proxy paperless:8000
+}
+
+download.devpi.de {
+  reverse_proxy vpn:8080 {
+    header_up -Origin
+    header_up -Referer
+  }
+}
+
+nextcloud.devpi.de {
+  redir /.well-known/carddav /remote.php/dav 301
+  redir /.well-known/caldav /remote.php/dav 301
+
+  header {
+    # enable HSTS
+    Strict-Transport-Security max-age=31536000;
+  }
+
+  reverse_proxy nextcloud:80
+}
+
+media.devpi.de {
+  reverse_proxy jellyfin:8096
+}
+
+bitwarden.devpi.de {
+  encode gzip
+
+  reverse_proxy vaultwarden:80 {
+    header_up X-Real-IP {remote_host}
+  }
+}
+
+books.devpi.de {
+  reverse_proxy calibre:8083 {
+    header_up X-Scheme https
+  }
+}
+
+jackett.devpi.de {
+  reverse_proxy vpn:9117
+}

@@ -1,0 +1,16 @@
+{
+  "provider": "DuckDNS",
+  "password": "",
+  "login_token": "%%DNS_LOGIN_TOKEN%%",
+  "domains": [
+    {
+      "domain_name": "www.duckdns.org",
+      "sub_domains": ["hamdevpi"]
+    }
+  ],
+  "ipv6_urls": ["https://ipv6.wtfismyip.com/text"],
+  "resolver": "2620:fe::fe",
+  "ip_type": "IPv6",
+  "interval": 300,
+  "socks5_proxy": ""
+}
