@@ -37,11 +37,33 @@ storage:
       mode: 0644
       contents:
         inline: homeserver
+      overwrite: true
+    - path: /var/srv/proxy/Caddyfile
+      mode: 0644
+      contents:
+        local: config/Caddyfile
+      overwrite: true
+    - path: /var/srv/godns/config_ipv4.json
+      mode: 0644
+      contents:
+        local: config/config_ipv4.json
+      overwrite: true
+    - path: /var/srv/godns/config_ipv6.json
+      mode: 0644
+      contents:
+        local: config/config_ipv6.json
+      overwrite: true
   directories:
     - path: /var/srv/calibre
       mode: 0700
     - path: /var/srv/proxy
       mode: 0700
+    - path: /var/srv/bitwarden
+      mode: 0700
+    - path: /var/srv/jackett
+      mode: 0700
+    - path: /var/srv/godns
+      mode: 0700
   trees:
-    - path: /etc/containers/systemd
+    - path: /etc/containers/systemd/users
       local: containers
