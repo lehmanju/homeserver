@@ -81,7 +81,7 @@ systemd:
         [Service]
         Type=oneshot
         RemainAfterExit=yes
-        ExecStart=cd /var/srv/vuetorrent
+        ExecStart=cd /var/srv
         ExecStart=curl -s https://github.com/VueTorrent/VueTorrent/releases/download/v2.7.3/vuetorrent.zip | bsdtar -xf-
 
         [Install]
