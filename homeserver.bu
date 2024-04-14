@@ -8,8 +8,8 @@ passwd:
 
 storage:
   disks:
-    - device: /dev/disk/by-id/eui.0025385971b15522
-      wipe_table: true
+    - device: /dev/disk/by-id/coreos-boot-disk
+      wipe_table: false
       partitions:
         - label: root
           number: 4
@@ -27,10 +27,6 @@ storage:
     - device: /dev/disk/by-partlabel/swap
       format: swap
       wipe_filesystem: true
-      with_mount_unit: true
-    - path: /preciousvol
-      device: /dev/RaidPool/preciousvol
-      format: xfs
       with_mount_unit: true
   files:
     - path: /etc/hostname
@@ -81,8 +77,33 @@ systemd:
         [Service]
         Type=oneshot
         RemainAfterExit=yes
-        ExecStart=cd /var/srv
-        ExecStart=curl -s https://github.com/VueTorrent/VueTorrent/releases/download/v2.7.3/vuetorrent.zip | bsdtar -xf-
+        WorkingDirectory=/var/srv
+        ExecStart=bash -c "curl -s https://github.com/VueTorrent/VueTorrent/releases/download/v2.7.3/vuetorrent.zip | bsdtar -xf-"
 
         [Install]
         WantedBy=multi-user.target
+    - name: lvm-adddev-md.service
+      contents: |
+        [Unit]
+        Description=Add Raid devices to lvm devices
+        DefaultDependencies=no
+
+        [Service]
+        Type=oneshot
+        RemainAfterExit=yes
+        ExecStart=bash -c "find /dev/md/* -print | sed -e 's/:/\\:/g' | xargs -n1 lvmdevices --adddev"
+        ExecStart=vgchange -ay RaidPool
+    - name: dev-RaidPool-preciousvol.device
+      contents: |
+        [Unit]
+        Wants=lvm-adddev-md.service
+    - name: var-preciousvol.mount
+      enabled: true
+      contents: |
+        [Mount]
+        What=/dev/RaidPool/preciousvol
+        Where=/var/preciousvol
+        Type=xfs
+      
+        [Install]
+        WantedBy=local-fs.target
