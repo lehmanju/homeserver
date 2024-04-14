@@ -14,4 +14,5 @@ This is a Fedora CoreOS setup for my homeserver.
 - Adjust `homeserver.bu`. I have a preexisting raid/lvm device that gets mounted at boot.
 - Run `make serve` to compile all config files with its secrets. It opens a local http server that FCOS uses to get the ignition file.
 - Boot your server from ipxe.
+- Once the server finished installing, kill your local http server.
 - `make clean` to remove your build directory.
