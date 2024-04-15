@@ -34,6 +34,19 @@ storage:
       contents:
         inline: homeserver
       overwrite: true
+    - path: /etc/lvm/devices/system.devices
+      overwrite: true
+      mode: 0600
+      contents:
+        inline: |
+          # LVM uses devices listed in this file.
+          # Created by LVM command lvmdevices pid 3547 at Mon Apr 15 17:41:58 2024
+          PRODUCT_UUID=5d1e6aea-92bf-43ee-aafd-3c7bd73218ee
+          VERSION=1.1.8
+          IDTYPE=md_uuid IDNAME=6bfd352d-0e94-b84a-607f-91174b43ba8a DEVNAME=/dev/md127 PVID=Td7T7vbdeWeWQK9wI0P24WvGmUeRqSuH
+          IDTYPE=md_uuid IDNAME=6bcebd12-bd6c-4ab3-5d81-dd578999c7f6 DEVNAME=/dev/md126 PVID=ydlbIbnJeaaH8MyqXNdSBulyBySojAD9
+          IDTYPE=md_uuid IDNAME=09500011-d336-e01b-a8a1-3536484ab859 DEVNAME=/dev/md125 PVID=4e2Q1iB7CBTKz0qh2DXroLMpehHSiyqH
+          IDTYPE=sys_wwid IDNAME=naa.500a0751e59353bb DEVNAME=/dev/sdc1 PVID=nDS6wbKJRla0fF2NIs6R6tk9Sc01TQL6 PART=1
     - path: /var/srv/proxy/Caddyfile
       mode: 0644
       contents:
@@ -82,21 +95,6 @@ systemd:
 
         [Install]
         WantedBy=multi-user.target
-    - name: lvm-adddev-md.service
-      contents: |
-        [Unit]
-        Description=Add Raid devices to lvm devices
-        DefaultDependencies=no
-
-        [Service]
-        Type=oneshot
-        RemainAfterExit=yes
-        ExecStart=bash -c "find /dev/md/* -print | sed -e 's/:/\\:/g' | xargs -n1 lvmdevices --adddev"
-        ExecStart=vgchange -ay RaidPool
-    - name: dev-RaidPool-preciousvol.device
-      contents: |
-        [Unit]
-        Wants=lvm-adddev-md.service
     - name: var-preciousvol.mount
       enabled: true
       contents: |
