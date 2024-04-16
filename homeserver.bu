@@ -91,7 +91,7 @@ systemd:
         Type=oneshot
         RemainAfterExit=yes
         WorkingDirectory=/var/srv
-        ExecStart=bash -c "curl -s https://github.com/VueTorrent/VueTorrent/releases/download/v2.7.3/vuetorrent.zip | bsdtar -xf-"
+        ExecStart=bash -c "curl https://github.com/VueTorrent/VueTorrent/releases/download/v2.7.3/vuetorrent.zip -L -o - | bsdtar -xf-"
 
         [Install]
         WantedBy=multi-user.target
