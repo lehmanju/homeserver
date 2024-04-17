@@ -76,18 +76,21 @@ storage:
     - path: /var/srv/godns
       mode: 0700
     - path: /home/core/.config
+      overwrite: true
       mode: 0755
       user:
         name: core
       group:
         name: core
     - path: /home/core/.config/containers
+      overwrite: true
       mode: 0755
       user:
         name: core
       group:
         name: core
     - path: /home/core/.config/containers/systemd
+      overwrite: true
       mode: 0755
       user:
         name: core
@@ -96,6 +99,7 @@ storage:
   trees:
     - path: /home/core/.config/containers/systemd
       local: containers
+      overwrite: true
 systemd:
   units:
     - name: vuetorrent.service
