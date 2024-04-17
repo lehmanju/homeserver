@@ -7,3 +7,6 @@ Volume=plpgdata.volume:/var/lib/postgresql/data
 Environment=POSTGRES_DB=paperless
 Environment=POSTGRES_USER=paperless
 Environment=POSTGRES_PASSWORD=%%PAPERLESS_DBPASS%%
+
+[Install]
+WantedBy=mutli-user.target default.target

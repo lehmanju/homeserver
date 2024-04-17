@@ -3,3 +3,6 @@ Pod=paperless.pod
 ContainerName=pl_broker
 AutoUpdate=registry
 Image=docker.io/library/redis:7
+
+[Install]
+WantedBy=mutli-user.target default.target

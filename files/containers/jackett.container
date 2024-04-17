@@ -5,3 +5,6 @@ AutoUpdate=registry
 Image=lscr.io/linuxserver/jackett:latest
 Volume=/var/srv/jackett/config:/config
 Volume=/var/srv/jackett/downloads:/downloads
+
+[Install]
+WantedBy=mutli-user.target default.target

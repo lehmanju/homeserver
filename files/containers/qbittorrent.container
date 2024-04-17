@@ -1,3 +1,6 @@
+[Unit]
+Requires=pia.service
+
 [Container]
 ContainerName=qbittorrent
 Pod=vpn
@@ -7,3 +10,6 @@ Volume=qbittorrent-config.volume:/config
 Volume=/var/srv/vuetorrent:/vuetorrent:ro
 Volume=/preciousvol/television:/media
 User=0:0
+
+[Install]
+WantedBy=mutli-user.target default.target

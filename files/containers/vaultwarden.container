@@ -10,3 +10,6 @@ Environment=SMTP_HOST=postfix
 Environment=SMTP_PORT=587
 Environment=SMTP_SECURITY=off
 Environment=SMTP_FROM=server@devpi.de
+
+[Install]
+WantedBy=mutli-user.target default.target

@@ -8,3 +8,6 @@ Volume=/preciousvol/television:/media
 Volume=/dev/dri/renderD128:/dev/dri/renderD128
 UserNS=keep-id
 Network=jellynet.network
+
+[Install]
+WantedBy=mutli-user.target default.target

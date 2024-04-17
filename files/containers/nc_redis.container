@@ -3,3 +3,6 @@ Pod=nextcloud.pod
 ContainerName=nc_redis
 AutoUpdate=registry
 Image=docker.io/redis:alpine
+
+[Install]
+WantedBy=mutli-user.target default.target

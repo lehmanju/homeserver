@@ -10,3 +10,6 @@ Environment=OAUTHLIB_RELAX_TOKEN_SCOPE=1
 Volume=/var/srv/calibre/config:/config
 Volume=/var/srv/calibre/library:/books
 Network=calibrenet.network
+
+[Install]
+WantedBy=mutli-user.target default.target

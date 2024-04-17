@@ -1,3 +1,6 @@
+[Unit]
+Requires=nc_db.service nc_redis.service
+
 [Container]
 Pod=nextcloud.pod
 ContainerName=nc_app
@@ -16,3 +19,6 @@ Environment=TRUSTED_PROXIES=127.0.0.1
 Environment=OVERWRITECLIURL=https://nextcloud.devpi.de
 Environment=OVERWRITEPROTOCOL=https
 Environment=NEXTCLOUD_CACHE_PATH=/cache
+
+[Install]
+WantedBy=mutli-user.target default.target
