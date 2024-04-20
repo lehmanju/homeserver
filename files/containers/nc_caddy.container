@@ -1,7 +1,5 @@
 [Unit]
 Requires=nc_app.service
-Wants=network-online.target
-After=network-online.target
 
 [Container]
 Pod=nextcloud.pod
