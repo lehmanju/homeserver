@@ -64,6 +64,15 @@ storage:
       overwrite: true
     - path: /var/lib/systemd/linger/core
       mode: 0644
+    - path: /etc/systemd/system/user@.service.d/override.conf
+      mode: 0644
+      contents:
+        inline: |
+          # Systemd workaround to depend on network-online for user services
+          # https://github.com/systemd/systemd/issues/3312
+          [Unit]
+          After=network-online.target
+          Wants=network-online.target
   directories:
     - path: /var/srv/calibre
       mode: 0700
@@ -75,6 +84,8 @@ storage:
       mode: 0700
     - path: /var/srv/godns
       mode: 0700
+    - path: /etc/systemd/system/user@.service.d
+      mode: 0755
     - path: /home/core/.config
       mode: 0755
       user:
