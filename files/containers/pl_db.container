@@ -3,7 +3,7 @@ Pod=paperless.pod
 ContainerName=pl_db
 AutoUpdate=registry
 Image=docker.io/library/postgres:15-alpine
-Volume=plpgdata.volume:/var/lib/postgresql/data
+Volume=plpgdata.volume:/var/lib/postgresql/data:z
 Environment=POSTGRES_DB=paperless
 Environment=POSTGRES_USER=paperless
 Environment=POSTGRES_PASSWORD=%%PAPERLESS_DBPASS%%

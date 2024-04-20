@@ -6,7 +6,7 @@ Pod=paperless.pod
 ContainerName=pl_webserver
 AutoUpdate=registry
 Image=ghcr.io/paperless-ngx/paperless-ngx:latest
-Volume=pldata.volume:/usr/src/paperless/data
+Volume=pldata.volume:/usr/src/paperless/data:z
 Volume=/var/preciousvol/paperless/media:/usr/src/paperless/media:z
 Environment=PAPERLESS_REDIS=redis://localhost:6379
 Environment=PAPERLESS_DBHOST=localhost
