@@ -1,5 +1,6 @@
 [Unit]
 Requires=pl_db.service pl_broker.service
+Requires=network-online.target
 
 [Container]
 Pod=paperless.pod

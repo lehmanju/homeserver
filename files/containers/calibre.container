@@ -1,3 +1,6 @@
+[Unit]
+Requires=network-online.target
+
 [Container]
 ContainerName=calibre
 Image=lscr.io/linuxserver/calibre-web:latest
@@ -8,7 +11,7 @@ Environment=TZ=Europe/Berlin
 Environment=DOCKER_MODS=linuxserver/mods:universal-calibre
 Environment=OAUTHLIB_RELAX_TOKEN_SCOPE=1
 Volume=/var/srv/calibre/config:/config
-Volume=/var/srv/calibre/library:/books
+Volume=/var/preciousvol/calibre/library:/books
 Network=calibrenet.network
 
 [Install]

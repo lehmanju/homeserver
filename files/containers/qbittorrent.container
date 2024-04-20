@@ -1,5 +1,6 @@
 [Unit]
 Requires=pia.service
+Requires=network-online.target
 
 [Container]
 ContainerName=qbittorrent
