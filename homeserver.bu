@@ -97,7 +97,6 @@ storage:
   trees:
     - path: /home/core/.config/containers/systemd
       local: containers
-      overwrite: true
 systemd:
   units:
     - name: vuetorrent.service
