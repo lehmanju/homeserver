@@ -8,7 +8,7 @@ AutoUpdate=registry
 Image=ghcr.io/onedr0p/qbittorrent:rolling
 Volume=qbittorrent-config.volume:/config
 Volume=/var/srv/vuetorrent:/vuetorrent:ro
-Volume=/preciousvol/television:/media
+Volume=/var/preciousvol/television:/media
 User=0:0
 
 [Install]
