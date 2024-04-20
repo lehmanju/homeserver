@@ -2,7 +2,7 @@
 ContainerName=vaultwarden
 AutoUpdate=registry
 Network=bitwardennet.network
-Volume=/var/srv/bitwarden/bw-data:/data
+Volume=/var/srv/bitwarden/bw-data:/data:z
 Image=ghcr.io/dani-garcia/vaultwarden:latest
 Environment=ADMIN_TOKEN=%%VW_ADMIN_TOKEN%%
 Environment=WEBSOCKET_ENABLED=True

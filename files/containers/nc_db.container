@@ -2,7 +2,7 @@
 Pod=nextcloud.pod
 ContainerName=nc_db
 AutoUpdate=registry
-Volume=nextcloud_db.volume:/var/lib/postgresql/data
+Volume=nextcloud_db.volume:/var/lib/postgresql/data:Z
 Image=docker.io/postgres:alpine
 Environment=POSTGRES_DB=nextcloud
 Environment=POSTGRES_USER=nextcloud

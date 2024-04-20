@@ -2,7 +2,7 @@
 ContainerName=godns-ip6
 AutoUpdate=registry
 Image=ghcr.io/timothyye/godns:latest
-Volume=/var/srv/godns/config_ipv6.json:/config.json
+Volume=/var/srv/godns/config_ipv6.json:/config.json:z
 
 [Install]
 WantedBy=multi-user.target default.target
