@@ -4,11 +4,12 @@ Requires=nc_app.service
 [Container]
 Pod=nextcloud.pod
 ContainerName=nc_caddy
-VolumesFrom=nc_app.container
 AutoUpdate=registry
-Volume=/var/srv/nextcloud/Caddyfile:/etc/caddy/Caddyfile
-Volume=nextcloud_caddy_data.volume:/data
-Volume=nextcloud_caddy_config.volume:/config
+Volume=/var/srv/nextcloud/Caddyfile:/etc/caddy/Caddyfile:z
+Volume=nextcloud_caddy_data.volume:/data:z
+Volume=nextcloud_caddy_config.volume:/config:z
+Volume=nextcloud.volume:/var/www/html:z
+Volume=/var/preciousvol/nextcloud/data:/var/www/html/data:z
 Image=docker.io/caddy
 
 [Install]

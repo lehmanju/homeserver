@@ -7,7 +7,7 @@ ContainerName=nc_app
 AutoUpdate=registry
 Image=docker.io/nextcloud:fpm-alpine
 Volume=nextcloud.volume:/var/www/html:z
-Volume=/var/preciousvol/nextcloud/data:/var/www/html/data
+Volume=/var/preciousvol/nextcloud/data:/var/www/html/data:z
 Volume=nextcloud_cache.volume:/cache:z
 Environment=POSTGRES_DB=nextcloud
 Environment=POSTGRES_USER=nextcloud

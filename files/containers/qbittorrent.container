@@ -3,12 +3,12 @@ Requires=pia.service
 
 [Container]
 ContainerName=qbittorrent
-Pod=vpn
+Pod=vpn.pod
 AutoUpdate=registry
 Image=ghcr.io/onedr0p/qbittorrent:rolling
-Volume=qbittorrent-config.volume:/config
-Volume=/var/srv/vuetorrent:/vuetorrent:ro
-Volume=/var/preciousvol/television:/media
+Volume=qbittorrent-config.volume:/config:z
+Volume=/var/srv/vuetorrent:/vuetorrent:ro:z
+Volume=/var/preciousvol/television:/media:z
 User=0:0
 
 [Install]
