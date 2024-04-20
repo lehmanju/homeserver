@@ -52,16 +52,28 @@ storage:
       contents:
         local: config/Caddyfile
       overwrite: true
+      user: 
+        name: core
+      group: 
+        name: core
     - path: /var/srv/godns/config_ipv4.json
       mode: 0644
       contents:
         local: config/config_ipv4.json
       overwrite: true
+      user: 
+        name: core
+      group: 
+        name: core
     - path: /var/srv/godns/config_ipv6.json
       mode: 0644
       contents:
         local: config/config_ipv6.json
       overwrite: true
+      user: 
+        name: core
+      group: 
+        name: core
     - path: /var/lib/systemd/linger/core
       mode: 0644
     - path: /etc/systemd/system/user@.service.d/override.conf
