@@ -5,4 +5,4 @@ AutoUpdate=registry
 Image=docker.io/redis:alpine
 
 [Install]
-WantedBy=mutli-user.target default.target
+WantedBy=multi-user.target default.target

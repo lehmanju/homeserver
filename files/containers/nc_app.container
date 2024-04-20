@@ -8,7 +8,7 @@ AutoUpdate=registry
 Image=docker.io/nextcloud:fpm-alpine
 Volume=nextcloud.volume:/var/www/html
 Volume=/preciousvol/nextcloud/data:/var/www/html/data
-Volume=nexcloud_cache.volume:/cache
+Volume=nextcloud_cache.volume:/cache
 Environment=POSTGRES_DB=nextcloud
 Environment=POSTGRES_USER=nextcloud
 Environment=POSTGRES_PASSWORD=%%NEXTCLOUD_POSTGRES_PW%%
@@ -21,4 +21,4 @@ Environment=OVERWRITEPROTOCOL=https
 Environment=NEXTCLOUD_CACHE_PATH=/cache
 
 [Install]
-WantedBy=mutli-user.target default.target
+WantedBy=multi-user.target default.target

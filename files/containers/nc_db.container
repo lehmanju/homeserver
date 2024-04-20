@@ -9,4 +9,4 @@ Environment=POSTGRES_USER=nextcloud
 Environment=POSTGRES_PASSWORD=%%NEXTCLOUD_POSTGRES_PW%%
 
 [Install]
-WantedBy=mutli-user.target default.target
+WantedBy=multi-user.target default.target

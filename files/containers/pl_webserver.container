@@ -22,4 +22,4 @@ Environment=PAPERLESS_FILENAME_FORMAT={created_year}/{correspondent}/{title}
 Environment="PAPERLESS_OCR_USER_ARGS={\"invalidate_digital_signatures\": true}"
 
 [Install]
-WantedBy=mutli-user.target default.target
+WantedBy=multi-user.target default.target

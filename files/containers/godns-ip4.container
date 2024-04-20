@@ -5,4 +5,4 @@ Image=ghcr.io/timothyye/godns:latest
 Volume=/var/srv/godns/config_ipv4.json:/config.json
 
 [Install]
-WantedBy=mutli-user.target default.target
+WantedBy=multi-user.target default.target

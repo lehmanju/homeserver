@@ -10,4 +10,4 @@ Environment=RELAYHOST_USERNAME=server@devpi.de
 Environment=RELAYHOST_PASSWORD=%%SMTP_PASSWORD%%
 
 [Install]
-WantedBy=mutli-user.target default.target
+WantedBy=multi-user.target default.target
