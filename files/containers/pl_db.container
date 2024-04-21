@@ -7,6 +7,8 @@ Volume=plpgdata.volume:/var/lib/postgresql/data:z
 Environment=POSTGRES_DB=paperless
 Environment=POSTGRES_USER=paperless
 Environment=POSTGRES_PASSWORD=%%PAPERLESS_DBPASS%%
+User=1000
+UserNS=keep-id
 
 [Install]
 WantedBy=multi-user.target default.target

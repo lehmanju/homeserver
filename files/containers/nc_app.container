@@ -19,6 +19,8 @@ Environment=TRUSTED_PROXIES=127.0.0.1
 Environment=OVERWRITECLIURL=https://nextcloud.devpi.de
 Environment=OVERWRITEPROTOCOL=https
 Environment=NEXTCLOUD_CACHE_PATH=/cache
+User=1000
+UserNS=keep-id
 
 [Install]
 WantedBy=multi-user.target default.target

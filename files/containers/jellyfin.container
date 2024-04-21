@@ -4,8 +4,8 @@ AutoUpdate=registry
 Image=docker.io/jellyfin/jellyfin
 Volume=jellyfin-config.volume:/config:z
 Volume=jellyfin-cache.volume:/cache:z
-Volume=/var/preciousvol/television:/media
-Volume=/dev/dri/renderD128:/dev/dri/renderD128:z
+Volume=/var/preciousvol/television:/media:z
+Volume=/dev/dri/renderD128:/dev/dri/renderD128
 UserNS=keep-id
 Network=jellynet.network
 

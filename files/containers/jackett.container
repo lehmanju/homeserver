@@ -3,8 +3,8 @@ ContainerName=jackett
 Pod=vpn.pod
 AutoUpdate=registry
 Image=lscr.io/linuxserver/jackett:latest
-Volume=/var/srv/jackett/config:/config
-Volume=/var/srv/jackett/downloads:/downloads
+Volume=/var/srv/jackett/config:/config:z
+Volume=/var/srv/jackett/downloads:/downloads:z
 
 [Install]
 WantedBy=multi-user.target default.target

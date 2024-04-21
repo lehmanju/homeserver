@@ -3,10 +3,9 @@ version: 1.5.0
 passwd:
   users:
     - name: core
+      uid: 1000
       ssh_authorized_keys:
         - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILHJZ+2vk9Rp1A6E9bTA2YwjPEpEe971rOncf6kNqlEB julius@thinkarch
-      groups:
-        - render
 
 storage:
   disks:
@@ -156,3 +155,16 @@ systemd:
       
         [Install]
         WantedBy=local-fs.target
+    - name: render-group.service
+      enabled: true
+      contents: |
+        [Unit]
+        ConditionFirstBoot=true
+
+        [Service]
+        Type=oneshot
+        RemainAfterExit=yes
+        ExecStart=bash -c 'grep ^render: /usr/lib/group >> /etc/group && usermod -G render -a core'
+
+        [Install]
+        WantedBy=multi-user.target default.target

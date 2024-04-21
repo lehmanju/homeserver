@@ -7,6 +7,8 @@ Image=docker.io/postgres:alpine
 Environment=POSTGRES_DB=nextcloud
 Environment=POSTGRES_USER=nextcloud
 Environment=POSTGRES_PASSWORD=%%NEXTCLOUD_POSTGRES_PW%%
+User=1000
+UserNS=keep-id
 
 [Install]
 WantedBy=multi-user.target default.target
