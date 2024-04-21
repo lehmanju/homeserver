@@ -20,7 +20,7 @@ Environment=PAPERLESS_DBPASS=%%PAPERLESS_DBPASS%%
 Environment="PAPERLESS_EMAIL_TASK_CRON=*/2 * * * *"
 Environment=PAPERLESS_FILENAME_FORMAT={created_year}/{correspondent}/{title}
 Environment="PAPERLESS_OCR_USER_ARGS={\"invalidate_digital_signatures\": true}"
-User=1000
+User=0
 UserNS=keep-id
 
 [Install]
