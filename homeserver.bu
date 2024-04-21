@@ -138,6 +138,8 @@ systemd:
         ConditionPathExists=!/var/srv/vuetorrent
 
         [Service]
+        User=1000
+        Group=1000
         Type=oneshot
         RemainAfterExit=yes
         WorkingDirectory=/var/srv

@@ -7,10 +7,8 @@ Pod=vpn.pod
 AutoUpdate=registry
 Image=ghcr.io/onedr0p/qbittorrent:rolling
 Volume=qbittorrent-config.volume:/config:z
-Volume=/var/srv/vuetorrent:/vuetorrent:ro:z
+Volume=/var/srv/vuetorrent:/vuetorrent:ro
 Volume=/var/preciousvol/television:/media:z
-User=1000
-UserNS=keep-id
 
 [Install]
 WantedBy=multi-user.target default.target

@@ -5,6 +5,11 @@ AutoUpdate=registry
 Image=lscr.io/linuxserver/jackett:latest
 Volume=/var/srv/jackett/config:/config:z
 Volume=/var/srv/jackett/downloads:/downloads:z
+Environment=PUID=1000
+Environment=GUID=1000
+Environment=TZ=Etc/UTC
+User=0
+UserNS=keep-id
 
 [Install]
 WantedBy=multi-user.target default.target
