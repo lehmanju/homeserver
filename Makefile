@@ -12,7 +12,7 @@ all:
 	find build/files -type f -print0 | xargs -0 sed -i 's/%%PIA_USER%%/${PIA_USER}/g'
 	find build/files -type f -print0 | xargs -0 sed -i 's/%%PIA_PASS%%/${PIA_PASS}/g'
 	find build/files -type f -print0 | xargs -0 sed -i 's/%%DNS_LOGIN_TOKEN%%/${DNS_LOGIN_TOKEN}/g'
-	podman run -i --rm --security-opt label=disable --volume .:/pwd --workdir /pwd quay.io/coreos/butane:release --files-dir build/files --output build/homeserver.ign < homeserver.bu
+	butane --files-dir build/files --output build/homeserver.ign < homeserver.bu
 	
 
 serve: all
