@@ -1,0 +1,13 @@
+[Unit]
+After=network-online.target
+Wants=network-online.target
+
+[Container]
+ContainerName=tuned
+Image=ghcr.io/lehmanju/containers/tuned:latest
+AutoUpdate=registry
+PodmanArgs=--priviliged
+Exec=-p spindown-disk --no-dbus
+
+[Install]
+WantedBy=multi-user.target default.target
