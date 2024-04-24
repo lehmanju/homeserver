@@ -6,7 +6,7 @@ Wants=network-online.target
 ContainerName=tuned
 Image=ghcr.io/lehmanju/containers/tuned:latest
 AutoUpdate=registry
-PodmanArgs=--priviliged
+PodmanArgs=--privileged
 Exec=-p spindown-disk --no-dbus
 
 [Install]
