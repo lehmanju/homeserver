@@ -126,6 +126,8 @@ storage:
   trees:
     - path: /home/core/.config/containers/systemd
       local: containers
+    - path: /etc/containers/systemd
+      local: containers-root
 systemd:
   units:
     - name: vuetorrent.service
