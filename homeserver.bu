@@ -170,3 +170,23 @@ systemd:
 
         [Install]
         WantedBy=multi-user.target default.target
+    - name: tuned-container.service
+      enabled: true
+      contents: |
+        [Unit]
+        Description=TuneD powersaving
+        After=network-online.target
+        Wants=network-online.target
+
+        [Service]
+        KillMode=mixed
+        ExecStop=/usr/bin/podman rm -v -f -i --cidfile=%t/%N.cid
+        ExecStopPost=-/usr/bin/podman rm -v -f -i --cidfile=%t/%N.cid
+        Delegate=yes
+        Type=notify
+        NotifyAccess=all
+        SyslogIdentifier=%N
+        ExecStart=/usr/bin/podman run --name=tuned --cidfile=%t/%N.cid --replace --rm --cgroups=split --network=host --sdnotify=conmon -d --label io.containers.autoupdate=registry --privileged ghcr.io/lehmanju/containers/tuned:latest -p spindown-disk --no-dbus
+
+        [Install]
+        WantedBy=multi-user.target default.target
