@@ -3,11 +3,11 @@ After=network-online.target
 Wants=network-online.target
 
 [Container]
-ContainerName=tuned
-Image=ghcr.io/lehmanju/containers/tuned:latest
+ContainerName=hd-idle
+Image=ghcr.io/lehmanju/containers/hd-idle:latest
 AutoUpdate=registry
 PodmanArgs=--privileged
-Exec=-p powersave --no-dbus
+Exec=-i 300 -c ata
 
 [Install]
 WantedBy=multi-user.target default.target
