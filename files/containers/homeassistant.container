@@ -1,0 +1,13 @@
+[Container]
+ContainerName=homeassistant
+AutoUpdate=registry
+Image=ghcr.io/home-assistant/home-assistant:stable
+Volume=/etc/localtime:/etc/localtime:ro
+Volume=/var/srv/homeassistant:/config:z
+Network=host
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=multi-user.target default.target
