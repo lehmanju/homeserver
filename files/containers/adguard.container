@@ -4,8 +4,8 @@ AutoUpdate=registry
 Image=docker.io/adguard/adguardhome
 Volume=/var/srv/adguard/work:/opt/adguardhome/work:z
 Volume=/var/srv/adguard/conf:/opt/adguardhome/conf:z
-PublishPort=5353:53/tcp
-PublishPort=5353:53/udp
+PublishPort=53000:53/tcp
+PublishPort=53000:53/udp
 PublishPort=3000:3000/tcp
 PublishPort=853:853/tcp
 
