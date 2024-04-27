@@ -9,5 +9,8 @@ Volume=/dev/dri/renderD128:/dev/dri/renderD128
 UserNS=keep-id
 Network=jellynet.network
 
+[Service]
+Restart=always
+
 [Install]
 WantedBy=multi-user.target default.target
