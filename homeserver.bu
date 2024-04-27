@@ -107,27 +107,10 @@ storage:
       mode: 0700
     - path: /etc/systemd/system/user@.service.d
       mode: 0755
-    - path: /home/core/.config
+    - path: /etc/containers/systemd/users/1000
       mode: 0755
-      user:
-        name: core
-      group:
-        name: core
-    - path: /home/core/.config/containers
-      mode: 0755
-      user:
-        name: core
-      group:
-        name: core
-    - path: /home/core/.config/containers/systemd
-      overwrite: true
-      mode: 0755
-      user:
-        name: core
-      group:
-        name: core
   trees:
-    - path: /home/core/.config/containers/systemd
+    - path: /etc/containers/systemd/users/1000
       local: containers
     - path: /etc/containers/systemd
       local: containers-root
