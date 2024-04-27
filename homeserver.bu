@@ -29,6 +29,9 @@ storage:
       format: swap
       wipe_filesystem: true
       with_mount_unit: true
+  links:
+    - path: /etc/localtime
+      target: ../usr/share/zoneinfo/Europe/Berlin
   files:
     - path: /etc/hostname
       mode: 0644
