@@ -1,6 +1,6 @@
 include secrets
 
-all:
+all: clean
 	mkdir -p ./build
 	cp -a files ./build/files
 	find build/files -type f -print0 | xargs -0 sed -i 's/%%NEXTCLOUD_POSTGRES_PW%%/${NEXTCLOUD_POSTGRES_PW}/g'
