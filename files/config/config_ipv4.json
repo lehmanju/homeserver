@@ -1,15 +1,25 @@
 {
-  "provider": "DuckDNS",
+  "provider": "Dynv6",
   "password": "",
   "login_token": "%%DNS_LOGIN_TOKEN%%",
   "domains": [
     {
-      "domain_name": "www.duckdns.org",
+      "domain_name": "dynv6.net",
       "sub_domains": ["hamdevpi"]
     }
   ],
   "resolver": "9.9.9.9",
-  "ip_urls": ["https://ipv4.wtfismyip.com/text"],
+   "ip_urls": [
+    "https://api4.ipify.org",
+    "https://myip.biturl.top",
+    "https://ip4.seeip.org",
+    "https://ipecho.net/plain",
+    "https://api-ipv4.ip.sb/ip"
+  ],
+  "ipv6_urls": [
+    "https://api6.ipify.org",
+    "https://api-ipv6.ip.sb/ip"
+  ],
   "ip_type": "IPv4",
   "interval": 300,
   "socks5_proxy": ""
