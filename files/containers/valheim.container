@@ -1,0 +1,18 @@
+[Container]
+ContainerName=valheim
+AutoUpdate=registry
+Image=ghcr.io/lloesche/valheim-server
+PublishPort=2456-2457:2456-2457/udp
+PublishPort=9001:9001/tcp
+Environment=SERVER_PASS=%%VALHEIM_PASSWORD%%
+Environment=SERVER_NAME=Devpi
+Environment=SERVER_NAME=VikingSolarSystem
+Environment=BEPINEX=true
+Environment=SUPERVISOR_HTTP=true
+Environment=SUPERVISOR_HTTP_PASS=%%VALHEIM_PASSWORD%%
+Volume=/var/srv/valheim/config:/config:z
+Volume=/var/srv/valheim/data:/opt/valheim:z
+AddCapability=sys_nice
+
+[Install]
+WantedBy=multi-user.target default.target
