@@ -89,6 +89,12 @@ storage:
           [Unit]
           After=network-online.target
           Wants=network-online.target
+    - path: /etc/systemd/system/raid-check.timer.d/override.conf
+      mode: 0644
+      contents:
+        inline: |
+          [Timer]
+          OnCalendar=Sun *-*-* 10:00:00
     - path: /etc/sysctl.d/90-net-unpriviliged.conf
       mode: 0644
       contents:
@@ -108,6 +114,8 @@ storage:
     - path: /etc/systemd/system/user@.service.d
       mode: 0755
     - path: /etc/containers/systemd/users/1000
+      mode: 0755
+    - path: /etc/systemd/system/raid-check.timer.d
       mode: 0755
   trees:
     - path: /etc/containers/systemd/users/1000
