@@ -12,6 +12,7 @@ all: clean
 	find build/files -type f -print0 | xargs -0 sed -i 's/%%PIA_USER%%/${PIA_USER}/g'
 	find build/files -type f -print0 | xargs -0 sed -i 's/%%PIA_PASS%%/${PIA_PASS}/g'
 	find build/files -type f -print0 | xargs -0 sed -i 's/%%DNS_LOGIN_TOKEN%%/${DNS_LOGIN_TOKEN}/g'
+	find build/files -type f -print0 | xargs -0 sed -i 's/%%VALHEIM_PASSWORD%%/${VALHEIM_PASSWORD}/g'
 	butane --files-dir build/files --output build/homeserver.ign < homeserver.bu
 	
 

@@ -9,5 +9,9 @@ AutoUpdate=registry
 PodmanArgs=--privileged
 Exec=-i 300 -c ata
 
+[Service]
+MaxRuntimeSec=12h
+Restart=always
+
 [Install]
 WantedBy=multi-user.target default.target
