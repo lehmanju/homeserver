@@ -4,7 +4,7 @@ Wants=network-online.target
 
 [Container]
 ContainerName=hd-idle
-Image=ghcr.io/lehmanju/containers/hd-idle:latest
+Image=ghcr.io/lehmanju/hd-idle:latest
 AutoUpdate=registry
 PodmanArgs=--privileged
 Exec=-i 300 -c ata

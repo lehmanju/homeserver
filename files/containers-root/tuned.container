@@ -4,7 +4,7 @@ Wants=network-online.target
 
 [Container]
 ContainerName=tuned
-Image=ghcr.io/lehmanju/containers/tuned:latest
+Image=ghcr.io/lehmanju/tuned:latest
 AutoUpdate=registry
 PodmanArgs=--privileged
 Exec=-p powersave --no-dbus
