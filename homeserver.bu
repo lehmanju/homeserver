@@ -38,19 +38,6 @@ storage:
       contents:
         inline: homeserver
       overwrite: true
-    - path: /etc/NetworkManager/system-connections/ens2.nmconnection
-      mode: 0600
-      contents:
-        inline: |
-          [connection]
-          id=eth0
-          type=ethernet
-          interface-name=eth0
-          [ipv4]
-          dns=9.9.9.9;
-          method=auto
-          [ipv6]
-          method=auto
     - path: /etc/lvm/devices/system.devices
       overwrite: true
       mode: 0644
