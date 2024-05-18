@@ -12,12 +12,10 @@
     "https://api4.ipify.org",
     "https://myip.biturl.top",
     "https://ip4.seeip.org",
-    "https://ipecho.net/plain",
-    "https://api-ipv4.ip.sb/ip"
+    "https://ipecho.net/plain"
   ],
   "ipv6_urls": [
-    "https://api6.ipify.org",
-    "https://api-ipv6.ip.sb/ip"
+    "https://api6.ipify.org"
   ],
   "resolver": "2620:fe::fe",
   "ip_type": "IPv6",
