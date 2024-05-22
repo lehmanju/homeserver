@@ -156,6 +156,8 @@ storage:
       local: containers-root
 systemd:
   units:
+    - name: podman-auto-update.timer
+      enabled: true
     - name: vuetorrent.service
       enabled: true
       contents: |
