@@ -32,6 +32,13 @@ storage:
   links:
     - path: /etc/localtime
       target: ../usr/share/zoneinfo/Europe/Berlin
+    - path: /home/core/.config/systemd/user/timers.target.wants/podman-auto-update.timer
+      user:
+        name: core
+      group:
+        name: core
+      target: /usr/lib/systemd/user/podman-auto-update.timer
+      hard: false
   files:
     - path: /etc/hostname
       mode: 0644
@@ -118,6 +125,30 @@ storage:
       mode: 0755
     - path: /etc/systemd/system/raid-check.timer.d
       mode: 0755
+    - path: /home/core/.config
+      mode: 0755
+      user:
+        name: core
+      group:
+        name: core
+    - path: /home/core/.config/systemd
+      mode: 0755
+      user:
+        name: core
+      group:
+        name: core
+    - path: /home/core/.config/systemd/user
+      mode: 0755
+      user:
+        name: core
+      group:
+        name: core
+    - path: /home/core/.config/systemd/user/timers.target.wants
+      mode: 0755
+      user:
+        name: core
+      group:
+        name: core
   trees:
     - path: /etc/containers/systemd/users/1000
       local: containers
