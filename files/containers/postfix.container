@@ -9,5 +9,8 @@ Environment=RELAYHOST=smtp.goneo.de:587
 Environment=RELAYHOST_USERNAME=server@devpi.de
 Environment=RELAYHOST_PASSWORD=%%SMTP_PASSWORD%%
 
+[Service]
+Restart=always
+
 [Install]
 WantedBy=multi-user.target default.target

@@ -9,6 +9,11 @@ Image=ghcr.io/onedr0p/qbittorrent:rolling
 Volume=qbittorrent-config.volume:/config:z
 Volume=/var/srv/vuetorrent:/vuetorrent:ro
 Volume=/var/preciousvol/television:/media:z
+User=0
+UserNS=keep-id
+
+[Service]
+Restart=always
 
 [Install]
 WantedBy=multi-user.target default.target

@@ -15,5 +15,8 @@ Environment=NFTABLES=1
 Environment=USER=%%PIA_USER%%
 Environment=PASS=%%PIA_PASS%%
 
+[Service]
+Restart=always
+
 [Install]
 WantedBy=multi-user.target default.target
