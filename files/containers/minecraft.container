@@ -1,0 +1,7 @@
+[Container]
+ContainerName=minecraft
+AutoUpdate=registry
+Image=docker.io/itzg/minecraft-server
+PublishPort=25565:25565
+Environment=EULA=true
+Volume=/var/srv/minecraft:/data
