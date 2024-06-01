@@ -6,6 +6,7 @@ passwd:
       uid: 1000
       ssh_authorized_keys:
         - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILHJZ+2vk9Rp1A6E9bTA2YwjPEpEe971rOncf6kNqlEB julius@thinkarch
+        - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIH0dmrJbykJIRxFlTUsiMLrcR8FIAHuMdAd8Z8o2PV9u julius@bazzitetower
 
 storage:
   disks:
