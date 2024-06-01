@@ -9,6 +9,7 @@ AddCapability=NET_RAW
 Environment=EULA=true
 Environment=ENABLE_AUTOPAUSE=true
 Environment=MAX_TICK_TIME=-1
+Environment=AUTOPAUSE_KNOCK_INTERFACE=enp2s0
 Environment=OPS=488c9608-efcf-4a7d-908b-c3a72a851d2f
 
 [Install]
