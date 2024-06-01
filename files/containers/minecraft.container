@@ -10,6 +10,8 @@ Environment=EULA=true
 Environment=ENABLE_AUTOPAUSE=true
 Environment=MAX_TICK_TIME=-1
 Environment=AUTOPAUSE_KNOCK_INTERFACE=enp2s0
+Environment=AUTOPAUSE_TIMEOUT_INIT=300
+Environment=AUTOPAUSE_TIMEOUT_EST=600
 Environment=OPS=488c9608-efcf-4a7d-908b-c3a72a851d2f
 
 [Install]
