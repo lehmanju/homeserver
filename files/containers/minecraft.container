@@ -3,5 +3,10 @@ ContainerName=minecraft
 AutoUpdate=registry
 Image=docker.io/itzg/minecraft-server
 PublishPort=25565:25565
+Volume=/var/srv/minecraft:/data:Z
+UserNS=keep-id
+AddCapability=cap_net_raw
 Environment=EULA=true
-Volume=/var/srv/minecraft:/data
+Environment=ENABLE_AUTOPAUSE=true
+Environment=MAX_TICK_TIME=-1
+Environment=OPS=488c9608-efcf-4a7d-908b-c3a72a851d2f
