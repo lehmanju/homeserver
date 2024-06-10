@@ -13,6 +13,8 @@ Environment=AUTOPAUSE_KNOCK_INTERFACE=enp2s0
 Environment=AUTOPAUSE_TIMEOUT_INIT=300
 Environment=AUTOPAUSE_TIMEOUT_EST=600
 Environment=OPS=488c9608-efcf-4a7d-908b-c3a72a851d2f
+Environment=INIT_MEMORY=1G
+Environment=MAX_MEMORY=4G
 
 [Install]
 WantedBy=multi-user.target default.target
