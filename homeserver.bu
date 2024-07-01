@@ -103,7 +103,7 @@ storage:
         inline: |
           [Timer]
           OnCalendar=
-          OnCalendar=Sun *-*-* 9:00:00
+          OnCalendar=Sun *-*-* 8:00:00
     - path: /etc/sysctl.d/90-net-unpriviliged.conf
       mode: 0644
       contents:
