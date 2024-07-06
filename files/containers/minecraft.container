@@ -19,6 +19,7 @@ Environment=MAX_MEMORY=4G
 Environment=TYPE=VANILLA
 Environment=TZ=Europe/Berlin
 Environment=VERSION=1.21
+Environment=VIEW_DISTANCE=20
 
 [Install]
 WantedBy=multi-user.target default.target
