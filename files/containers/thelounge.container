@@ -1,0 +1,12 @@
+[Container]
+ContainerName=thelounge
+AutoUpdate=registry
+Image=ghcr.io/thelounge/thelounge:latest
+Volume=/var/srv/thelounge:/var/opt/thelounge:Z
+PublishPort=9000:9000
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=multi-user.target default.target
