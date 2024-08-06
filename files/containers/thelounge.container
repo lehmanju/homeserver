@@ -4,6 +4,7 @@ AutoUpdate=registry
 Image=ghcr.io/thelounge/thelounge:latest
 Volume=/var/srv/thelounge:/var/opt/thelounge:Z
 PublishPort=9000:9000
+UserNS=keep-id
 
 [Service]
 Restart=always
