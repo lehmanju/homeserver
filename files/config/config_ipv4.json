@@ -4,8 +4,8 @@
   "login_token": "%%DNS_LOGIN_TOKEN%%",
   "domains": [
     {
-      "domain_name": "dynv6.net",
-      "sub_domains": ["hamdevpi"]
+      "domain_name": "v6.navy",
+      "sub_domains": ["devpiserver"]
     }
   ],
   "resolver": "9.9.9.9",
